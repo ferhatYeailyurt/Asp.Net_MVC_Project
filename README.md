@@ -1,9 +1,17 @@
-Asp.Net MVC
-Entity Framework
-Ajax
-Bootstrap
-JavaScript
-Html/Css
-Jquery
-Sql Server
-Authentication İşlemleri
+Asp.Net MVC<br>
+
+Entity Framework<br>
+
+Ajax<br>
+
+Bootstrap<br>
+
+JavaScript<br>
+
+Html/Css<br>
+
+Jquery<br>
+
+Sql Server<br>
+
+Authentication İşlemleri<br>
