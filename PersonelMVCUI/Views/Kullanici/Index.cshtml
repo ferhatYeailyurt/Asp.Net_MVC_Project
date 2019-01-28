@@ -1,0 +1,54 @@
+﻿@model IEnumerable<PersonelMVCUI.Models.EntityFramework.Kullanici>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Kullanıcı Oluştur", "Create",null, new { @class = "btn btn-success" })
+</p>
+<table class="table table-bordered" id="tblTableView">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>Güncelle</th>
+        <th>Detaylı Bak</th>
+        <th>Sil</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.Id }, new { @class = "btn btn-success" }) 
+                           </td>
+        <td>
+            @Html.ActionLink("Detaylı Bak", "Details", new { id = item.Id }, new { @class = "btn btn-success" }) 
+
+        </td>
+        <td>
+            @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-danger" })
+
+        </td>
+    </tr>
+}
+
+</table>

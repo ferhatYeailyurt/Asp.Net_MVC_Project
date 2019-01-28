@@ -1,0 +1,14 @@
+﻿@model PersonelMVCUI.ViewModels.MesajViewModel
+
+@if (Model.status)
+{
+    <div class="alert alert-success">
+       @Model.Mesaj<a href="@Model.Url">@Model.LinkText</a>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger">
+        @Model.Mesaj<a href="@Model.Url">@Model.LinkText</a>
+    </div>
+}

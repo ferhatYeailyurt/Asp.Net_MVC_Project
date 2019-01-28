@@ -1,0 +1,42 @@
+﻿@using PersonelMVCUI.Models.EntityFramework
+
+@model List<Departman>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a class="btn btn-success" href="/Departman/Yeni">Yeni Departman</a>
+<h2>Departman Listesi</h2>
+
+
+
+<table class="table table-bordered" id="tblTableView">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+            <th>Personeller</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var departman in Model)
+        {
+        <tr>
+            <td>@departman.Id</td>
+            <td>@departman.Ad</td>
+            <td><a class="btn btn-primary" href="/Departman/Guncelle/@departman.Id">Güncelle</a></td>
+            <td><a class="btn btn-warning btnDepartmanSil" data-id="@departman.Id">Sil</a></td>
+            @*<td>@Html.ActionLink("Personelleri Göster","PersonelleriListele","Personel", new {id=departman.Id },new {@class="btn btn-primary" })</td>*@
+            
+
+            <td>@Ajax.ActionLink("Personelleri Göster","PersonelleriListele","Personel",new {id=departman.Id},new AjaxOptions {HttpMethod="GET", UpdateTargetId="personelListesi"}, new {@class="btn btn-primary"})</td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+<div id="personelListesi"></div>
+

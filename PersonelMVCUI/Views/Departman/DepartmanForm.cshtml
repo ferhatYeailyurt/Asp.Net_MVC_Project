@@ -1,0 +1,39 @@
+﻿@model PersonelMVCUI.Models.EntityFramework.Departman
+@{
+    ViewBag.Title = "Yeni";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div id="mesaj"></div>
+@using (Ajax.BeginForm("Kaydet", "Departman",new AjaxOptions {HttpMethod="POST",UpdateTargetId="mesaj" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+
+        <br /> @Html.LabelFor(m => m.Ad)<br />
+        @Html.TextBoxFor(m => m.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Ad)
+        <br />
+
+        @Html.HiddenFor(m => m.Id)
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </div>
+}
+@section scripts{
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+
+@*<form method="post" action="">
+        <div class="form-group" >
+            <label>Departman Adı</label>
+            <input type="text" name="Ad" class="form-control" />
+
+        </div>
+        <button type="submit" class="btn btn-success">Ekle</button>
+    </form>*@
+
+

@@ -1,0 +1,19 @@
+﻿<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Personel Yönetim Sistemi</a>
+            Hoş Geldiniz @HttpContext.Current.User.Identity.Name
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/Departman">Departmanlar</a></li>
+            <li><a href="/Personel">Personeller</a></li>
+            @if (User.IsInRole("A"))
+            {
+                <li><a href="/Kullanici">Kullanıcılar</a></li>
+            }
+
+            <li><a href="/Security/Loguot">Çıkış Yap</a></li>
+
+        </ul>
+    </div>
+</nav>
