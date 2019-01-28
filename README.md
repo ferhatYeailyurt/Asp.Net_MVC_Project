@@ -1,1 +1,9 @@
-# Asp.Net_MVC_Project
+Asp.Net MVC
+Entity Framework
+Ajax
+Bootstrap
+JavaScript
+Html/Css
+Jquery
+Sql Server
+Authentication İşlemleri
